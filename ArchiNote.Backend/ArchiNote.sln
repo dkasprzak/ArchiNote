@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Api", "ArchiNote.Api\ArchiNote.Api.csproj", "{FECDA318-E10D-49A3-85BE-5DFAEEA2C4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Domain", "ArchiNote.Domain\ArchiNote.Domain.csproj", "{FB77B713-892E-490B-A8E4-351B7A6C935A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Application", "ArchiNote.Application\ArchiNote.Application.csproj", "{4A5644B3-6DE4-4933-8057-61EC3437AEBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Infrastructure", "ArchiNote.Infrastructure\ArchiNote.Infrastructure.csproj", "{C61BD3AA-1620-4336-A851-22E3E497BA8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECDA318-E10D-49A3-85BE-5DFAEEA2C4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECDA318-E10D-49A3-85BE-5DFAEEA2C4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECDA318-E10D-49A3-85BE-5DFAEEA2C4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECDA318-E10D-49A3-85BE-5DFAEEA2C4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB77B713-892E-490B-A8E4-351B7A6C935A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB77B713-892E-490B-A8E4-351B7A6C935A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB77B713-892E-490B-A8E4-351B7A6C935A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB77B713-892E-490B-A8E4-351B7A6C935A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5644B3-6DE4-4933-8057-61EC3437AEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5644B3-6DE4-4933-8057-61EC3437AEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5644B3-6DE4-4933-8057-61EC3437AEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5644B3-6DE4-4933-8057-61EC3437AEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
