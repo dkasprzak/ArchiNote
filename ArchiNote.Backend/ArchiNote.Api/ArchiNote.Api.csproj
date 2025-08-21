@@ -13,7 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ArchiNote.Application\ArchiNote.Application.csproj" />
       <ProjectReference Include="..\ArchiNote.Infrastructure\ArchiNote.Infrastructure.csproj" />
     </ItemGroup>
 

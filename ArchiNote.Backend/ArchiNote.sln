@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Application", "Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Infrastructure", "ArchiNote.Infrastructure\ArchiNote.Infrastructure.csproj", "{C61BD3AA-1620-4336-A851-22E3E497BA8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.SharedKernel", "ArchiNote.SharedKernel\ArchiNote.SharedKernel.csproj", "{6513734A-EB60-4C8B-B40F-9D9C35C43557}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C61BD3AA-1620-4336-A851-22E3E497BA8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

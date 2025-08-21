@@ -7,7 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ArchiNote.Domain\ArchiNote.Domain.csproj" />
+        <ProjectReference Include="..\ArchiNote.Domain\ArchiNote.Domain.csproj" />
+        <ProjectReference Include="..\ArchiNote.SharedKernel\ArchiNote.SharedKernel.csproj" /><ProjectReference Include="..\ArchiNote.SharedKernel\ArchiNote.SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

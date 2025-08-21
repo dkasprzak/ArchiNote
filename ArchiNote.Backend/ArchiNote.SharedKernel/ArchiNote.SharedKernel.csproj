@@ -6,8 +6,4 @@
         <Nullable>disable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\ArchiNote.SharedKernel\ArchiNote.SharedKernel.csproj" />
-    </ItemGroup>
-
 </Project>
