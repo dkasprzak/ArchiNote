@@ -1,21 +1,41 @@
+using ArchiNote.Api;
+using ArchiNote.Api.Extensions;
+using ArchiNote.Application;
+using ArchiNote.Infrastructure;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
+
+builder.Services
+   // .AddApplication()
+    .AddPresentation()
+    .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.MapEndpoints();
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerWithUi();
 }
 
-app.UseHttpsRedirection();
-app.Run();
+app.UseRequestContextLogging();
+
+app.UseSerilogRequestLogging();
+
+app.UseExceptionHandler();
+
+//app.UseAuthorization();
+
+//app.UseAuthentication();
+ 
+await app.RunAsync();
+
+// REMARK: Required for functional and integration tests to work.
+namespace Web.Api
+{
+    public partial class Program;
+}
