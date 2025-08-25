@@ -1,7 +1,10 @@
+using System.Reflection;
 using ArchiNote.Api;
 using ArchiNote.Api.Extensions;
 using ArchiNote.Application;
 using ArchiNote.Infrastructure;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
 
 builder.Services
-   // .AddApplication()
+    .AddApplication()
     .AddPresentation()
     .AddInfrastructure(builder.Configuration);
+
+builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
@@ -20,7 +25,14 @@ app.MapEndpoints();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerWithUi();
+    
+    app.ApplyMigrations();
 }
+
+app.MapHealthChecks("health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.UseRequestContextLogging();
 
