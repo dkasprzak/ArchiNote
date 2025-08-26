@@ -20,7 +20,8 @@ builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
-app.MapEndpoints();
+var apiGroup = app.MapGroup("/api");
+app.MapEndpoints(apiGroup);
 
 if (app.Environment.IsDevelopment())
 {

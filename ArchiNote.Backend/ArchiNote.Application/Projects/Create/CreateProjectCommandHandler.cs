@@ -6,7 +6,7 @@ using ArchiNote.SharedKernel;
 
 namespace ArchiNote.Application.Projects.Create;
 
-public sealed class CreateProjectCommandHandler(IApplicationDbContext dbContext, IDateTimeProvider dateTimeProvider)
+internal sealed class CreateProjectCommandHandler(IApplicationDbContext dbContext, IDateTimeProvider dateTimeProvider)
     : BaseCommandHandler(dbContext, dateTimeProvider), ICommandHandler<CreateProjectCommand, Guid>
 {
     public async Task<Result<Guid>> Handle(CreateProjectCommand command, CancellationToken cancellationToken)

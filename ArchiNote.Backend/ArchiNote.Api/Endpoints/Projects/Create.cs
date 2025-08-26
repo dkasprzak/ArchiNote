@@ -6,7 +6,7 @@ using ArchiNote.SharedKernel;
 
 namespace ArchiNote.Api.Endpoints.Projects;
 
-public class Create : IEndpoint
+internal sealed class Create : IEndpoint
 {
     public sealed record Request
     {
@@ -25,7 +25,7 @@ public class Create : IEndpoint
                 Name = request.Name
             };
             
-            Result<Guid> result = await handler.Handle(command, cancellationToken);
+            var result = await handler.Handle(command, cancellationToken);
             
             return result.Match(Results.Ok, CustomResults.Problem);
         })

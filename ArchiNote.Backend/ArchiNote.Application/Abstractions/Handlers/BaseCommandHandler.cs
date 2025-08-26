@@ -3,14 +3,14 @@ using ArchiNote.SharedKernel;
 
 namespace ArchiNote.Application.Abstractions.Handlers;
 
-public abstract class BaseCommandHandler
+public abstract class BaseCommandHandler(IApplicationDbContext dbContext, IDateTimeProvider dateTimeProvider)
 {
-    protected readonly IApplicationDbContext _dbContext;
-    protected readonly IDateTimeProvider _dateTimeProvider;
+    protected readonly IApplicationDbContext _dbContext = dbContext;
+    protected readonly IDateTimeProvider _dateTimeProvider = dateTimeProvider;
 
-    protected BaseCommandHandler(IApplicationDbContext dbContext, IDateTimeProvider dateTimeProvider)
+    protected BaseCommandHandler(IApplicationDbContext dbContext) : this(dbContext, null)
     {
-        _dbContext = dbContext;
-        _dateTimeProvider = dateTimeProvider;
     }
+    
+ 
 }
