@@ -2,4 +2,4 @@
 
 namespace ArchiNote.Application.Projects.Delete;
 
-public sealed record DeleteProjectCommand : ICommand;
+public sealed record DeleteProjectCommand(Guid ProjectId) : ICommand;
