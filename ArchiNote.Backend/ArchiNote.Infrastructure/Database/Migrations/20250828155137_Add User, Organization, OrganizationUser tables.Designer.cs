@@ -3,6 +3,7 @@ using System;
 using ArchiNote.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ArchiNote.Infrastructure.Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250828155137_Add User, Organization, OrganizationUser tables")]
+    partial class AddUserOrganizationOrganizationUsertables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,9 +73,7 @@ namespace ArchiNote.Infrastructure.Database.Migrations
                         .HasColumnName("created_date");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasColumnType("text")
                         .HasColumnName("full_name");
 
                     b.Property<bool>("IsActive")
@@ -111,8 +112,8 @@ namespace ArchiNote.Infrastructure.Database.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasMaxLength(250)
+                        .HasColumnType("character varying(250)")
                         .HasColumnName("name");
 
                     b.HasKey("Id")
@@ -133,15 +134,11 @@ namespace ArchiNote.Infrastructure.Database.Migrations
                         .HasColumnName("created_date");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasColumnType("text")
                         .HasColumnName("email");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasColumnType("text")
                         .HasColumnName("first_name");
 
                     b.Property<bool>("IsActive")
@@ -149,9 +146,7 @@ namespace ArchiNote.Infrastructure.Database.Migrations
                         .HasColumnName("is_active");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasColumnType("text")
                         .HasColumnName("last_name");
 
                     b.Property<DateTimeOffset>("ModifiedDate")
@@ -159,9 +154,7 @@ namespace ArchiNote.Infrastructure.Database.Migrations
                         .HasColumnName("modified_date");
 
                     b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
+                        .HasColumnType("text")
                         .HasColumnName("password_hash");
 
                     b.HasKey("Id")

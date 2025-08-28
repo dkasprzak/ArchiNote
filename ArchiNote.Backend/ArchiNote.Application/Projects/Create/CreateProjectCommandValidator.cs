@@ -8,6 +8,6 @@ public sealed class CreateProjectCommandValidator : AbstractValidator<CreateProj
     {
         RuleFor(x => x.Name)
             .NotEmpty()
-            .MaximumLength(250);
+            .MaximumLength(200);
     }
 }

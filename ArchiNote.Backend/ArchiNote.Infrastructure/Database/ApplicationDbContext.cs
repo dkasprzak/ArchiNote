@@ -1,5 +1,8 @@
 ﻿using ArchiNote.Application.Abstractions.Data;
+using ArchiNote.Domain.Organizations;
+using ArchiNote.Domain.OrganizationUsers;
 using ArchiNote.Domain.Projects;
+using ArchiNote.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArchiNote.Infrastructure.Database;
@@ -7,6 +10,9 @@ namespace ArchiNote.Infrastructure.Database;
 public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options), IApplicationDbContext
 {
     public DbSet<Project> Projects { get; set; }
+    public DbSet<User> Users { get; }
+    public DbSet<Organization> Organizations { get; }
+    public DbSet<OrganizationUser> OrganizationUsers { get; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -14,7 +20,7 @@ public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> 
         modelBuilder.HasDefaultSchema(Schemas.Default);
     }
 
-    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         int result = await base.SaveChangesAsync(cancellationToken);
         

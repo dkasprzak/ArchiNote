@@ -11,7 +11,7 @@ public sealed class ProjectConfiguration : IEntityTypeConfiguration<Project>
         builder.HasKey(p => p.Id);
         
         builder.Property(p => p.Name)
-            .HasMaxLength(250)
+            .HasMaxLength(200)
             .IsRequired();
         
         builder.Property(p => p.CreatedDate)
