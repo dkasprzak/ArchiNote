@@ -2,6 +2,7 @@
 using ArchiNote.Api.Infrastructure;
 using ArchiNote.Application.Abstractions.Messaging;
 using ArchiNote.Application.Projects.Create;
+using ArchiNote.Domain.Projects;
 using ArchiNote.SharedKernel;
 
 namespace ArchiNote.Api.Endpoints.Projects;
@@ -11,6 +12,7 @@ internal sealed class Create : IEndpoint
     public sealed record Request
     {
         public string Name { get; set; }
+        public ProjectStatus Status { get; set; }
     }
     
     public void MapEndpoint(IEndpointRouteBuilder app)
@@ -22,7 +24,8 @@ internal sealed class Create : IEndpoint
         {
             var command = new CreateProjectCommand
             {
-                Name = request.Name
+                Name = request.Name,
+                Status = request.Status
             };
             
             var result = await handler.Handle(command, cancellationToken);

@@ -15,6 +15,7 @@ internal sealed class CreateProjectCommandHandler(IApplicationDbContext dbContex
         {
             Id = Guid.NewGuid(),
             Name = command.Name,
+            Status = command.Status,
             CreatedDate = dateTimeProvider.UtcNow,
             ModifiedDate = dateTimeProvider.UtcNow
         };

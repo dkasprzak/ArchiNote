@@ -16,6 +16,7 @@ internal sealed class GetProjectsQueryHandler(IApplicationDbContext dbContext) :
             {
                 Id = project.Id,
                 Name = project.Name,
+                Status = project.Status,
                 CreatedDate = project.CreatedDate,
                 ModifiedDate = project.ModifiedDate
             })

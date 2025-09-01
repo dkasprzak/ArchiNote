@@ -5,4 +5,5 @@ namespace ArchiNote.Domain.Projects;
 public sealed class Project : Entity
 {
     public string Name { get; set; }
+    public ProjectStatus Status { get; set; }
 }

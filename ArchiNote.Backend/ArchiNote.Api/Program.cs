@@ -18,7 +18,11 @@ builder.Services
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
+builder.Services.AddCors();
+
 var app = builder.Build();
+
+app.UseCorsExtension(builder.Configuration);
 
 var apiGroup = app.MapGroup("/api");
 app.MapEndpoints(apiGroup);

@@ -6,8 +6,7 @@ public sealed class CreateProjectCommandValidator : AbstractValidator<CreateProj
 {
     public CreateProjectCommandValidator()
     {
-        RuleFor(x => x.Name)
-            .NotEmpty()
-            .MaximumLength(200);
+        RuleFor(p => p.Name).NotEmpty().MaximumLength(200);
+        RuleFor(p => p.Status).IsInEnum();
     }
 }
