@@ -3,19 +3,18 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./App.css";
-import { ThemeProvider, CssBaseline, Container, darkTheme } from "./theme";
-import { ProjectList } from "./components/ProjectList/ProjectList";
+import { ThemeProvider, CssBaseline, darkTheme } from "./assets/theme";
+import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./router/AppRouter";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <Container maxWidth="lg">
-          <ProjectList />
-        </Container>
+        <AppRouter />
       </ThemeProvider>
-    </>
+    </BrowserRouter>
   );
 }
 

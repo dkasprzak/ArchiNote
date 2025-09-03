@@ -5,7 +5,7 @@ export const ProjectStatus = {
   InProgress: 1,
   Completed: 2,
   Cancelled: 3,
-} as const;
+} as const; //type safety
 
 export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus];
 
@@ -20,15 +20,15 @@ export interface Project {
   id: UUID;
   name: string;
   status: ProjectStatus;
-  createdDate: string;
-  modifiedDate: string;
+  createdDate: Date;
+  modifiedDate: Date;
 }
 
 export interface CreateProjectRequest {
   name: string;
 }
 
-export interface CreateProjectRequest {
+export interface DeleteProjectRequest {
   projectId: UUID;
 }
 

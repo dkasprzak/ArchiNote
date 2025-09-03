@@ -24,6 +24,19 @@ export {
   Chip,
   Avatar,
   IconButton,
+  Drawer,
+  Toolbar,
+  List,
+  CssBaseline,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  AppBar,
+  useTheme,
+  type Theme,
+  type AppBarProps as MuiAppBarProps,
+  type CSSObject,
 } from "@mui/material";
 
 export {
@@ -32,4 +45,9 @@ export {
   Edit as EditIcon,
   Save as SaveIcon,
   Close as CloseIcon,
+  ChevronLeft as ChevronLeftIcon,
+  ChevronRight as ChevronRightIcon,
+  MoveToInbox as InboxIcon,
+  Mail as MailIcon,
+  Menu as MenuIcon,
 } from "@mui/icons-material";
