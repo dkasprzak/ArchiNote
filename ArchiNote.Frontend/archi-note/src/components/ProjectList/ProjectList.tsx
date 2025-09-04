@@ -6,6 +6,7 @@ import {
 } from "../../api/types/projects";
 import { projectService } from "../../api/services/projectService";
 import { Grid, Card, CardContent, Typography, Box, Chip } from "@mui/material";
+import { Loader } from "../Loader/Loader";
 
 export const ProjectList = () => {
   const [projects, setProjects] = useState<Project[] | null>(null);
@@ -27,26 +28,30 @@ export const ProjectList = () => {
     <>
       {
         <Grid container spacing={2}>
-          {projects?.map((project) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={project.id}>
-              <Card>
-                <CardContent>
-                  <Box
-                    display="flex"
-                    //justifyContent="space-between"
-                    alignItems="center"
-                  >
-                    <Typography variant="h6">{project.name}</Typography>
-                    <Chip
-                      label={PROJECT_STATUS_LABELS[project.status]}
-                      color={getStatusColor(project.status)}
-                      size="small"
-                    />
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          {projects && projects.length > 0 ? (
+            projects.map((project) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={project.id}>
+                <Card>
+                  <CardContent>
+                    <Box
+                      display="flex"
+                      //justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Typography variant="h6">{project.name}</Typography>
+                      <Chip
+                        label={PROJECT_STATUS_LABELS[project.status]}
+                        color={getStatusColor(project.status)}
+                        size="small"
+                      />
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))
+          ) : (
+            <Loader show={loading} />
+          )}
         </Grid>
       }
     </>

@@ -33,6 +33,7 @@ export {
   ListItemIcon,
   ListItemText,
   AppBar,
+  Backdrop,
   useTheme,
   type Theme,
   type AppBarProps as MuiAppBarProps,
@@ -50,4 +51,5 @@ export {
   MoveToInbox as InboxIcon,
   Mail as MailIcon,
   Menu as MenuIcon,
+  HomeWork as HomeWorkIcon,
 } from "@mui/icons-material";
