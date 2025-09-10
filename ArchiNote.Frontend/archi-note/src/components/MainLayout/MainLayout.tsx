@@ -43,9 +43,13 @@ export const MainLayout = ({ children }: { children: ReactNode }) => {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          p: { xs: 0, sm: 3 }, // ZERO padding na mobile
           mt: 8,
           transition: "padding 0.3s ease-in-out",
+          width: "100vw", // pełna szerokość viewport
+          maxWidth: "100vw", // nie więcej niż viewport
+          overflow: "hidden", // obetnij wszystko co wychodzi
+          boxSizing: "border-box",
         }}
       >
         {children}

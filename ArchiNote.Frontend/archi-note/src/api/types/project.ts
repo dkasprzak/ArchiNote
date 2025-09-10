@@ -31,20 +31,3 @@ export interface CreateProjectRequest {
 export interface DeleteProjectRequest {
   projectId: UUID;
 }
-
-export const getStatusColor = (
-  status: ProjectStatus
-): "default" | "primary" | "secondary" | "success" | "error" => {
-  switch (status) {
-    case ProjectStatus.Pending:
-      return "default";
-    case ProjectStatus.InProgress:
-      return "primary";
-    case ProjectStatus.Completed:
-      return "success";
-    case ProjectStatus.Cancelled:
-      return "error";
-    default:
-      return "default";
-  }
-};

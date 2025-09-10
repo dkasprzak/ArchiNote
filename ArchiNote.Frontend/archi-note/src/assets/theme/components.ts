@@ -35,6 +35,8 @@ export {
   AppBar,
   Backdrop,
   useTheme,
+  styled,
+  useMediaQuery,
   type Theme,
   type AppBarProps as MuiAppBarProps,
   type CSSObject,
@@ -52,4 +54,7 @@ export {
   Mail as MailIcon,
   Menu as MenuIcon,
   HomeWork as HomeWorkIcon,
+  ArrowBack as ArrowBackIcon,
+  CalendarToday as CalendarIcon,
+  Work as WorkIcon,
 } from "@mui/icons-material";

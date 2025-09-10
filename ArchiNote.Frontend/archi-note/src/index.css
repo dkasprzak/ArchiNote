@@ -1,4 +1,6 @@
 :root {
+  font-size: var(--font-size-default);
+  font-family: var(--font-family-default);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
