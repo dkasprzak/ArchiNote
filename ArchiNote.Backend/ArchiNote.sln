@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiNote.SharedKernel", "ArchiNote.SharedKernel\ArchiNote.SharedKernel.csproj", "{6513734A-EB60-4C8B-B40F-9D9C35C43557}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8A524592-1AB1-4825-802D-0E39D374E839}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "ArchitectureTests\ArchitectureTests.csproj", "{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,12 @@ Global
 		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6513734A-EB60-4C8B-B40F-9D9C35C43557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE8C0F8A-80AB-452B-A47F-38A91D7A8BEA} = {8A524592-1AB1-4825-802D-0E39D374E839}
 	EndGlobalSection
 EndGlobal
