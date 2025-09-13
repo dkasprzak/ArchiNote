@@ -1,4 +1,6 @@
-﻿using ArchiNote.Application.Abstractions.Data;
+﻿using ArchiNote.Application.Abstractions.Authentication;
+using ArchiNote.Application.Abstractions.Data;
+using ArchiNote.Infrastructure.Authentication;
 using ArchiNote.Infrastructure.Database;
 using ArchiNote.Infrastructure.Time;
 using ArchiNote.SharedKernel;
@@ -13,9 +15,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection
         AddInfrastructure(this IServiceCollection services, IConfiguration configuration) =>
-        services.AddServices()
+        services
+            .AddServices()
             .AddDatabase(configuration)
-            .AddHealthChecks(configuration);
+            .AddHealthChecks(configuration)
+            .AddAuthenticationInternal(configuration);
     
     private static IServiceCollection AddServices(this IServiceCollection services)
     {
@@ -45,6 +49,14 @@ public static class DependencyInjection
             .AddHealthChecks()
             .AddNpgSql(configuration.GetConnectionString("Database")!);
 
+        return services;
+    }
+
+    private static IServiceCollection AddAuthenticationInternal(this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddSingleton<IPasswordManager, PasswordManager>();
+        
         return services;
     }
 }
