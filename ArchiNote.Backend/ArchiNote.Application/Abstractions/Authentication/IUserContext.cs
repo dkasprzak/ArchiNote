@@ -9,5 +9,4 @@ public interface IUserContext
     List<Guid> CustomerOrganizations { get; }
     Guid? ActiveOrganizationId { get; }
     bool IsCustomer { get; }
-    bool IsSuperAdmin { get; }
 }
