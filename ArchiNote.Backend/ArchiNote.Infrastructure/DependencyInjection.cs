@@ -8,6 +8,7 @@ using ArchiNote.Infrastructure.Time;
 using ArchiNote.SharedKernel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
@@ -76,7 +77,8 @@ public static class DependencyInjection
 
         services.AddHttpContextAccessor();
         services.AddScoped<IUserContext, UserContext>();
-        services.AddSingleton<IPasswordManager, PasswordManager>();
+        services.AddScoped(typeof(IPasswordHasher<>), typeof(PasswordHasher<>));
+        services.AddScoped<IPasswordManager, PasswordManager>();
         services.AddSingleton<ITokenProvider, TokenProvider>();
         
         return services;

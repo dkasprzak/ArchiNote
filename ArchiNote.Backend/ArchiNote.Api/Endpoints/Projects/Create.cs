@@ -9,7 +9,7 @@ namespace ArchiNote.Api.Endpoints.Projects;
 
 internal sealed class Create : IEndpoint
 {
-    public sealed record Request
+    public sealed record CreateProjectRequest
     {
         public string Name { get; set; }
         public ProjectStatus Status { get; set; }
@@ -18,7 +18,7 @@ internal sealed class Create : IEndpoint
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPost("projects", async (
-            Request request,
+                CreateProjectRequest request,
             ICommandHandler<CreateProjectCommand, Guid> handler,
             CancellationToken cancellationToken) =>
         {

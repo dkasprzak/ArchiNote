@@ -45,9 +45,9 @@ app.UseSerilogRequestLogging();
 
 app.UseExceptionHandler();
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
-//app.UseAuthentication();
+app.UseAuthentication();
  
 await app.RunAsync();
 

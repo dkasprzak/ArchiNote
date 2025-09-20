@@ -10,9 +10,9 @@ namespace ArchiNote.Infrastructure.Database;
 public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options), IApplicationDbContext
 {
     public DbSet<Project> Projects { get; set; }
-    public DbSet<User> Users { get; }
-    public DbSet<Organization> Organizations { get; }
-    public DbSet<OrganizationUser> OrganizationUsers { get; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Organization> Organizations { get; set; }
+    public DbSet<OrganizationUser> OrganizationUsers { get; set;  }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
